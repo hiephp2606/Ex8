@@ -5,12 +5,12 @@ public class BaseEntity {
     private static int autoId;
     private int id;
 
-    
-    public BaseEntity(String name, int id) {
+
+    public BaseEntity(String name) {
+        super();
         this.name = name;
         this.id = ++autoId;
     }
-
 
     public String getName() {
         return name;
@@ -36,7 +36,11 @@ public class BaseEntity {
         this.id = id;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "BaseEntity{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }
